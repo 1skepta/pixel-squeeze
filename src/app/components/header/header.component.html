@@ -1,0 +1,15 @@
+<div>
+  <i (click)="toggleMenu()" class="fa fa-bars"></i>
+</div>
+<div>Hello WOrld</div>
+
+<div *ngIf="menuOpen">
+  <ul>
+    <li>Home</li>
+    <li>Single Image</li>
+    <li>Multiple Images</li>
+    <li>About</li>
+    <li>Services</li>
+    <li>Contact</li>
+  </ul>
+</div>
