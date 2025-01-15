@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
+import { StoriesComponent } from '../stories/stories.component';
 
 @Component({
   selector: 'app-body',
-  imports: [],
+  imports: [StoriesComponent],
   templateUrl: './body.component.html',
-  styleUrl: './body.component.css'
+  styleUrl: './body.component.css',
 })
-export class BodyComponent {
-
-}
+export class BodyComponent {}
