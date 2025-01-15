@@ -1,20 +1,47 @@
 <div class="flex justify-between items-center p-8">
   <div (click)="toggleMenu()">
-    <img class="w-10" src="images/sort.png" alt="hamburger icon" />
+    <img class="w-9" src="images/sort.png" alt="hamburger icon" />
   </div>
   <div class="flex items-center">
     <img class="w-14" src="images/pixelsqueeze.webp" alt="Pixel Squeeze Logo" />
-    <span style="color: #2064ba">PixelSqueeze</span>
+    <span style="color: #2064ba" class="ml-2 font-bold text-xl"
+      >PixelSqueeze</span
+    >
   </div>
 </div>
 
-<div *ngIf="menuOpen">
-  <ul>
-    <li>Home</li>
-    <li>Single Image</li>
-    <li>Multiple Images</li>
-    <li>About</li>
-    <li>Services</li>
-    <li>Contact</li>
-  </ul>
+<div
+  [ngClass]="{
+    'p-5': true,
+    fixed: true,
+    'top-0': true,
+    'left-0': true,
+    'h-full': true,
+    'w-3/4': true,
+    'bg-white': true,
+    'shadow-lg': true,
+    transform: true,
+    'transition-transform': true,
+    'duration-700': true,
+    'ease-in-out': true,
+    'z-50': true,
+    'translate-x-0': menuOpen,
+    'translate-x-[-100%]': !menuOpen
+  }"
+>
+  <div class="flex flex-col mt-5">
+    <div class="flex justify-end">
+      <i (click)="toggleMenu()" class="fa fa-arrow-left text-gray-500"></i>
+    </div>
+    <div>
+      <ul>
+        <li>Home</li>
+        <li>Single Image</li>
+        <li>Multiple Images</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+  </div>
 </div>
