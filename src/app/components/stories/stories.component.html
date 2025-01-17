@@ -2,28 +2,33 @@
   <h1 class="mb-7 font-sans font-bold text-3xl">Success stories</h1>
   <div>
     <div>
-      <div><img src="" alt="" /></div>
+      <div class="mb-3">
+        <img
+          [src]="stories[currentIndex].imgSrc"
+          alt="User Image"
+          class="w-12 rounded-full"
+        />
+      </div>
       <div>
-        <p class="text-start">
-          Awesome developers, Very responsive, PixelSqueeze has the best
-          developer experience of all image compressors i have ever used. Their
-          support is reliable. Always listening to their community and fixing
-          bugs
+        <p class="text-justify">
+          {{ stories[currentIndex].testimonial }}
         </p>
       </div>
       <div class="my-6">
-        <p>Name</p>
-        <span style="color: #e4e9f0">Occupation</span>
+        <p>{{ stories[currentIndex].name }}</p>
+        <span style="color: #e4e9f0">{{
+          stories[currentIndex].occupation
+        }}</span>
       </div>
     </div>
+
     <div class="flex justify-end">
-      <div class="p-3 px-4 rounded-full bg-white">
+      <button (click)="showPrevious()" class="p-3 px-4 rounded-full bg-white">
         <i class="fa fa-arrow-left text-gray-500"></i>
-      </div>
-      <div class="p-3 px-4 rounded-full bg-white ml-3">
+      </button>
+      <button (click)="showNext()" class="p-3 px-4 rounded-full bg-white ml-3">
         <i class="fa fa-arrow-right text-gray-500"></i>
-        <!-- comment -->
-      </div>
+      </button>
     </div>
   </div>
 </div>
