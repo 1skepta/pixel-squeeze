@@ -9,4 +9,8 @@ import { HeaderComponent } from '../header/header.component';
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
 })
-export class BodyComponent {}
+export class BodyComponent {
+  sendEmail(email: string): void {
+    window.location.href = `mailto:${email}`;
+  }
+}

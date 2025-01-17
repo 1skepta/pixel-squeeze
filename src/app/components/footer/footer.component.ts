@@ -7,10 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './footer.component.css',
 })
 export class FooterComponent {
-  sendEmail(email: string): void {
-    window.location.href = `mailto:${email}`;
-  }
-
   currentYear: number;
 
   constructor() {

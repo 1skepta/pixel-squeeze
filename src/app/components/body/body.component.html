@@ -1,5 +1,4 @@
 <app-header></app-header>
-
 <div class="p-8">
   <div>
     <img src="images/assets/yea.webp" alt="bg-image" />
@@ -120,4 +119,18 @@
   </p>
 </div>
 <app-stories></app-stories>
+<div class="p-8">
+  <h1 class="my-7 font-sans font-bold text-3xl" style="color: #1a202c">
+    Any Enquiries, Feedbacks ?
+  </h1>
+  <div
+    style="background-color: #20c5f8"
+    class="p-4 my-7 flex justify-center rounded-lg"
+    (click)="sendEmail('prospaul999@gmail.com')"
+  >
+    <span style="color: #fcfeff" class="font-light tracking-wide"
+      >Contact Us</span
+    >
+  </div>
+</div>
 <app-footer></app-footer>
