@@ -1,24 +1,26 @@
-<div class="mx-4 py-16 px-8 text-white" style="background-color: #20c5f8">
+<div class="my-5 mx-4 py-16 px-8 text-white" style="background-color: #20c5f8">
   <h1 class="mb-7 font-sans font-bold text-3xl">Success stories</h1>
   <div>
     <div>
-      <div class="mb-3">
-        <img
-          [src]="stories[currentIndex].imgSrc"
-          alt="User Image"
-          class="w-12 rounded-full"
-        />
-      </div>
       <div>
         <p class="text-justify">
           {{ stories[currentIndex].testimonial }}
         </p>
       </div>
-      <div class="my-6">
-        <p>{{ stories[currentIndex].name }}</p>
-        <span style="color: #e4e9f0">{{
-          stories[currentIndex].occupation
-        }}</span>
+      <div class="flex items-center">
+        <div class="mr-3">
+          <img
+            [src]="stories[currentIndex].imgSrc"
+            alt="User Image"
+            class="w-12 rounded-full"
+          />
+        </div>
+        <div class="my-6">
+          <p>{{ stories[currentIndex].name }}</p>
+          <span style="color: #e4e9f0">{{
+            stories[currentIndex].occupation
+          }}</span>
+        </div>
       </div>
     </div>
 
