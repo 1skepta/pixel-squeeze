@@ -6,22 +6,23 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TinyPngService {
-  private apiUrl = 'https://api.tinify.com/shrink';
-  private apiKey = 'RKjHC9792T2G5rcpDXfdc59Nn4TXlM39';
+  private corsProxy = 'https://cors-anywhere.herokuapp.com/';
+  private tinifyApiUrl = 'https://api.tinify.com/shrink';
+  private apiKey = 'YOUR_API_KEY'; // Replace with your Tinify API key
 
   constructor(private http: HttpClient) {}
 
   compressImage(file: File): Observable<any> {
-    const headers = new HttpHeaders({
-      Authorization: `Basic ${btoa('api:' + this.apiKey)}`,
-    });
-
     const formData = new FormData();
     formData.append('file', file);
 
-    return this.http.post(this.apiUrl, formData, {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.apiKey}`,
+    });
+
+    // Using CORS proxy with the Tinify API
+    return this.http.post(this.corsProxy + this.tinifyApiUrl, formData, {
       headers,
-      responseType: 'json',
     });
   }
 }
