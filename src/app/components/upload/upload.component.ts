@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { TinyPngService } from '../../tiny-png.service';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
@@ -15,33 +14,43 @@ import { CommonModule } from '@angular/common';
 export class UploadComponent {
   compressedImageUrl: string | null = null;
   uploadedFileName: string | null = null;
-  constructor(
-    private tinyPngService: TinyPngService,
-    private httpClient: HttpClient
-  ) {}
+  uploadedFile: File | null = null;
+  readyToCompress = false;
+  isCompressing = false; // Track if the image is being compressed
+
+  constructor(private tinyPngService: TinyPngService) {}
 
   onFileSelected(event: Event): void {
     const input = event.target as HTMLInputElement;
-
     if (input.files && input.files.length > 0) {
       const file = input.files[0];
-
       if (file.type.startsWith('image/')) {
         this.uploadedFileName = file.name;
-        console.log('Selected file: ', file.name);
-
-        this.tinyPngService.compressImage(file).subscribe({
-          next: (response) => {
-            this.compressedImageUrl = response.output.url;
-            console.log('Compressed image URL:', this.compressedImageUrl);
-          },
-          error: (err) => {
-            console.error('Failed to compress image:', err);
-          },
-        });
+        this.uploadedFile = file;
+        this.readyToCompress = true;
       } else {
-        console.error('Selected file is not an image.');
+        alert('Please select a valid image file.');
       }
+    }
+  }
+
+  compressImage(): void {
+    if (this.uploadedFile) {
+      this.isCompressing = true; // Show loading spinner
+      this.tinyPngService.compressImage(this.uploadedFile).subscribe({
+        next: (response) => {
+          // Assuming the response contains the compressed image URL
+          this.compressedImageUrl = response.output.url;
+          this.isCompressing = false; // Hide spinner when done
+        },
+        error: (err) => {
+          console.error('Failed to compress image:', err);
+          this.isCompressing = false; // Hide spinner
+          alert(
+            'An error occurred while compressing the image. Please try again.'
+          );
+        },
+      });
     }
   }
 }

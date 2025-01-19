@@ -6,22 +6,42 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class TinyPngService {
-  private corsProxy = 'https://cors-anywhere.herokuapp.com/';
+  // Local CORS proxy URL
+  private corsProxyUrl = 'http://localhost:8080/'; // Update to your local proxy
   private tinifyApiUrl = 'https://api.tinify.com/shrink';
-  private apiKey = 'YOUR_API_KEY'; // Replace with your Tinify API key
+  private apiKey = 'RKjHC9792T2G5rcpDXfdc59Nn4TXlM39'; // Replace with your actual Tinify API key
 
   constructor(private http: HttpClient) {}
 
+  // Method to compress an image from file
   compressImage(file: File): Observable<any> {
     const formData = new FormData();
     formData.append('file', file);
 
+    // Basic authentication header for Tinify API
     const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.apiKey}`,
+      Authorization: 'Basic ' + btoa('api:' + this.apiKey), // Base64 encode "api:YOUR_API_KEY"
     });
 
-    // Using CORS proxy with the Tinify API
-    return this.http.post(this.corsProxy + this.tinifyApiUrl, formData, {
+    // Send the request via CORS proxy to bypass CORS issue
+    return this.http.post(this.corsProxyUrl + this.tinifyApiUrl, formData, {
+      headers: headers,
+    });
+  }
+
+  // Method to compress an image from URL (Optional)
+  compressImageFromUrl(imageUrl: string): Observable<any> {
+    const headers = new HttpHeaders({
+      Authorization: 'Basic ' + btoa('api:' + this.apiKey),
+      'Content-Type': 'application/json',
+    });
+
+    const body = {
+      source: { url: imageUrl },
+    };
+
+    // Send the request via CORS proxy to bypass CORS issue
+    return this.http.post(this.corsProxyUrl + this.tinifyApiUrl, body, {
       headers,
     });
   }
