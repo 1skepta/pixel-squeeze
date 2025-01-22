@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
+import 'aos/dist/aos.css';
 import { TinyPngService } from '../../tiny-png.service';
 import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
@@ -10,7 +12,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css'],
 })
-export class UploadComponent {
+export class UploadComponent implements OnInit {
+  ngOnInit() {
+    AOS.init();
+  }
   compressedImageUrl: string | null = null;
   uploadedFileName: string | null = null;
   uploadedFile: File | null = null;
