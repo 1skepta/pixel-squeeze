@@ -13,4 +13,8 @@ export class HeaderComponent {
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }
+
+  logClick(page: string): void {
+    console.log(`${page} link clicked`);
+  }
 }
