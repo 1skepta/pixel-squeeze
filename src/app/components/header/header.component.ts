@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,9 @@ export class HeaderComponent {
     this.menuOpen = !this.menuOpen;
   }
 
-  logClick(page: string): void {
-    console.log(`${page} link clicked`);
+  constructor(private router: Router) {}
+  logClick(link: string) {
+    console.log(`${link} link clicked`);
+    this.router.navigate([link]);
   }
 }

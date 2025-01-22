@@ -32,9 +32,11 @@
     </div>
     <div class="m-5 mt-10">
       <ul class="leading-[3] text-gray-500">
-        <li><a routerLink="/" routerLinkActive="active">Home</a></li>
         <li>
-          <a routerLink="/upload" routerLinkActive="active">Compression</a>
+          <a (click)="logClick('/')">Home</a>
+        </li>
+        <li>
+          <a (click)="logClick('/upload')">Compression</a>
         </li>
         <li>Convertion</li>
         <li>About</li>

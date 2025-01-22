@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { StoriesComponent } from '../stories/stories.component';
 import { FooterComponent } from '../footer/footer.component';
-import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-body',
-  imports: [StoriesComponent, FooterComponent, HeaderComponent],
+  imports: [StoriesComponent, FooterComponent],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
 })
