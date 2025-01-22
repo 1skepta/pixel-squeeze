@@ -1,36 +1,41 @@
-<div data-aos="fade-up" data-aos-duration="1000" class="p-8">
-  <div data-aos="zoom-in" data-aos-duration="1500">
-    <img src="images/assets/yea.webp" alt="bg-image" />
-  </div>
-  <div class="text-left">
-    <h1
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      class="my-7 font-sans font-extrabold text-4xl"
-      style="color: #1a202c"
-    >
-      PixelSque<span style="color: #20c5f8">e</span>ze
-    </h1>
-    <p
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      class="text-gray-500 leading-2.5 text-justify"
-    >
-      PixelSqueeze is an image compression app, the perfect solution to optimize
-      your images without compromising quality. Effortlessly reduce file sizes
-      while preserving the visual integrity of your photos, making them easier
-      to store, share and upload
-    </p>
-    <div
-      data-aos="fade-up"
-      data-aos-duration="1000"
-      style="background-color: #20c5f8"
-      class="p-4 my-7 flex justify-center rounded-lg"
-      (click)="goToUpload()"
-    >
-      <span style="color: #fcfeff" class="font-light tracking-wide"
-        >Upload an Image</span
+<div data-aos="fade-up" data-aos-duration="1000" class="p-8 md:pt-10 md:px-20">
+  <div class="md:flex md:items-center md:flex-row-reverse md:justify-between">
+    <div data-aos="zoom-in" data-aos-duration="1500" class="md:w-1/2">
+      <img src="images/assets/yea.webp" alt="bg-image" />
+    </div>
+    <div class="text-left md:w-1/2">
+      <h1
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="my-7 font-sans font-extrabold text-4xl md:hidden"
+        style="color: #1a202c"
       >
+        PixelSque<span style="color: #20c5f8">e</span>ze
+      </h1>
+      <h1 class="hidden my-7 font-sans font-semibold text-6xl md:block">
+        Optimal image: Compression, delivery
+      </h1>
+      <p
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="text-gray-500 leading-2.5 text-justify"
+      >
+        PixelSqueeze is an image compression app, the perfect solution to
+        optimize your images without compromising quality. Effortlessly reduce
+        file sizes while preserving the visual integrity of your photos, making
+        them easier to store, share and upload
+      </p>
+      <div
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        style="background-color: #20c5f8"
+        class="p-4 my-7 flex justify-center rounded-lg"
+        (click)="goToUpload()"
+      >
+        <span style="color: #fcfeff" class="font-light tracking-wide"
+          >Upload an Image</span
+        >
+      </div>
     </div>
   </div>
   <div class="flex flex-col items-center">

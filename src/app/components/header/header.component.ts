@@ -25,4 +25,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigate([link]);
     this.toggleMenu();
   }
+  logDeskClick(link: string) {
+    this.router.navigate([link]);
+  }
 }
