@@ -1,10 +1,26 @@
-<div class="flex justify-between items-center p-8">
-  <div data-aos="fade-right" data-aos-duration="1000" (click)="toggleMenu()">
+<div class="flex justify-between items-center p-8 md:pt-10 md:px-20">
+  <div
+    data-aos="fade-right"
+    data-aos-duration="1000"
+    (click)="toggleMenu()"
+    class="md:hidden"
+  >
     <img class="w-9" src="images/sort.png" alt="hamburger icon" />
   </div>
   <div data-aos="fade-left" data-aos-duration="1000" class="flex items-center">
     <img class="w-14" src="images/pixelsqueeze.webp" alt="Pixel Squeeze Logo" />
+    <h1 class="text-2xl font-bold ml-2 md:block hidden select-none">
+      PixelSque<span style="color: #20c5f8">e</span>ze
+    </h1>
   </div>
+  <ul class="hidden md:flex text-gray-500 w-3/5 justify-between font-normal">
+    <li class="cursor-pointer hover:text-black">Home</li>
+    <li class="cursor-pointer hover:text-black">Compresssion</li>
+    <li class="cursor-pointer hover:text-black">Convertion</li>
+    <li class="cursor-pointer hover:text-black">About</li>
+    <li class="cursor-pointer hover:text-black">Services</li>
+    <li class="cursor-pointer hover:text-black">Contact</li>
+  </ul>
 </div>
 
 <div
