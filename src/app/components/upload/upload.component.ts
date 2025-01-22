@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { TinyPngService } from '../../tiny-png.service';
-import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-upload',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, CommonModule],
+  imports: [FooterComponent, CommonModule],
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css'],
 })

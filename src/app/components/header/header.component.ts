@@ -17,7 +17,6 @@ export class HeaderComponent {
 
   constructor(private router: Router) {}
   logClick(link: string) {
-    console.log(`${link} link clicked`);
     this.router.navigate([link]);
   }
 }
