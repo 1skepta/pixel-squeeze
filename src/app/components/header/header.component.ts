@@ -18,5 +18,6 @@ export class HeaderComponent {
   constructor(private router: Router) {}
   logClick(link: string) {
     this.router.navigate([link]);
+    this.toggleMenu();
   }
 }

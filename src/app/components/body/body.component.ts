@@ -1,7 +1,9 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import * as AOS from 'aos';
+import 'aos/dist/aos.css';
+import { Router } from '@angular/router';
 import { StoriesComponent } from '../stories/stories.component';
 import { FooterComponent } from '../footer/footer.component';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-body',
@@ -9,12 +11,16 @@ import { Router } from '@angular/router';
   templateUrl: './body.component.html',
   styleUrl: './body.component.css',
 })
-export class BodyComponent {
+export class BodyComponent implements OnInit {
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    AOS.init();
+  }
+
   sendEmail(email: string): void {
     window.location.href = `mailto:${email}`;
   }
-
-  constructor(private router: Router) {}
 
   goToUpload() {
     this.router.navigate(['/upload']);
