@@ -19,10 +19,4 @@ export class AppComponent {
       'Pixel Squeeze - Your First Stop For Image Compression'
     );
   }
-
-  showBody = true;
-
-  toggleComponent() {
-    this.showBody = !this.showBody;
-  }
 }
