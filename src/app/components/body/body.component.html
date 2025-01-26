@@ -35,12 +35,14 @@
       </div>
     </div>
   </div>
-  <div class="flex flex-col items-center">
+  <div
+    class="flex flex-col items-center md:flex-row md:w-5/6 md:ml-auto md:mr-auto md:mt-10"
+  >
     <div class="flex flex-col items-center">
       <img class="rounded-lg" src="images/assets/raw.jpg" alt=" raw file" />
       <span class="text-gray-500 my-5">2.78MB</span>
     </div>
-    <div class="mb-10">
+    <div class="mb-10 md:hidden">
       <div>
         <i class="fa fa-arrow-down text-gray-500"></i
         ><i class="fa fa-arrow-down text-gray-500"></i
@@ -58,6 +60,26 @@
         ><i class="fa fa-arrow-down text-gray-500"></i
         ><i class="fa fa-arrow-down text-gray-500"></i>
         <i class="fa fa-arrow-down text-gray-500"></i>
+      </div>
+    </div>
+    <div class="hidden md:flex flex-col">
+      <div class="flex mx-5">
+        <i class="fa fa-arrow-right text-gray-500"></i>
+        <i class="fa fa-arrow-right text-gray-500"></i>
+        <i class="fa fa-arrow-right text-gray-500"></i
+        ><i class="fa fa-arrow-right text-gray-500"></i>
+      </div>
+      <div class="flex my-3 mx-5">
+        <i class="fa fa-arrow-right text-gray-500"></i>
+        <i class="fa fa-arrow-right text-gray-500"></i>
+        <i class="fa fa-arrow-right text-gray-500"></i
+        ><i class="fa fa-arrow-right text-gray-500"></i>
+      </div>
+      <div class="flex mx-5">
+        <i class="fa fa-arrow-right text-gray-500"></i
+        ><i class="fa fa-arrow-right text-gray-500"></i>
+        <i class="fa fa-arrow-right text-gray-500"></i>
+        <i class="fa fa-arrow-right text-gray-500"></i>
       </div>
     </div>
     <div class="flex flex-col items-center">
@@ -72,77 +94,86 @@
 </div>
 <div
   style="background-color: #20c5f8"
-  class="my-5 p-8 flex flex-col items-center py-9 text-white"
+  class="my-5 p-8 flex flex-col items-center py-9 text-white md:py-24"
 >
-  <h1 class="mb-2 text-4xl font-extrabold">4,900</h1>
-  <p class="text-xl font-bold">Images compressed so far</p>
-</div>
-<div class="p-8">
-  <h1 class="my-7 font-sans font-bold text-3xl" style="color: #1a202c">
-    Why Use PixelSqueeze ?
-  </h1>
-  <p class="text-gray-500 leading-2.5 text-justify">
-    PixelSqueeze is your all-in-one image compression solution for all media
-    types. It processes your images in real time. PixelSqueeze goes a lot
-    further than any other tool in the market.
-  </p>
-  <ul class="my-8 ml-3">
-    <li class="mb-5">
-      <div class="flex items-center">
-        <img src="images/blue.jpg" alt=" check mark" class="w-3" />
-        <span class="ml-3 text-gray-500 leading-none"
-          >Fast processing time</span
-        >
-      </div>
-    </li>
-    <li class="mb-5">
-      <div class="flex items-center">
-        <img src="images/blue.jpg" alt=" check mark" class="w-3" />
-        <span class="ml-3 text-gray-500 leading-none"
-          >Compressed images still maintain aesthetic quality</span
-        >
-      </div>
-    </li>
-    <li class="mb-5">
-      <div class="flex items-center">
-        <img src="images/blue.jpg" alt=" check mark" class="w-3" />
-        <span class="ml-3 text-gray-500 leading-none"
-          >Serves images via a fast image CDN</span
-        >
-      </div>
-    </li>
-    <li class="mb-5">
-      <div class="flex items-center">
-        <img src="images/blue.jpg" alt=" check mark" class="w-3" />
-        <span class="ml-3 text-gray-500 leading-none">Free of Charge!!!</span>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<div class="p-8">
-  <h1 class="my-7 font-sans font-bold text-3xl" style="color: #1a202c">
-    Lighter Images means faster load times and improved website performance
-  </h1>
-  <p class="text-gray-500 leading-2.5 text-justify mb-8">
-    Images add up to 60% of the average web page's total load time. For that
-    reason, by taking care of something as simple as optimizing them, you can
-    get your site to load even twice as fast. PixelSqueeze does that for you, on
-    autopilot!
+  <h1 class="mb-2 text-4xl font-extrabold md:text-7xl">4,900</h1>
+  <p class="text-xl font-bold md:text-2xl md:font-normal">
+    Images compressed so far
   </p>
 </div>
-<app-stories></app-stories>
+<div class="md:px-20 md:flex">
+  <div class="p-8 md:w-1/2">
+    <h1 class="my-7 font-sans font-bold text-3xl" style="color: #1a202c">
+      Why Use PixelSqueeze ?
+    </h1>
+    <p class="text-gray-500 leading-2.5 text-justify">
+      PixelSqueeze is your all-in-one image compression solution for all media
+      types. It processes your images in real time. PixelSqueeze goes a lot
+      further than any other tool in the market.
+    </p>
+    <ul class="my-8 ml-3">
+      <li class="mb-5">
+        <div class="flex items-center">
+          <img src="images/blue.jpg" alt=" check mark" class="w-3" />
+          <span class="ml-3 text-gray-500 leading-none"
+            >Fast processing time</span
+          >
+        </div>
+      </li>
+      <li class="mb-5">
+        <div class="flex items-center">
+          <img src="images/blue.jpg" alt=" check mark" class="w-3" />
+          <span class="ml-3 text-gray-500 leading-none"
+            >Compressed images still maintain aesthetic quality</span
+          >
+        </div>
+      </li>
+      <li class="mb-5">
+        <div class="flex items-center">
+          <img src="images/blue.jpg" alt=" check mark" class="w-3" />
+          <span class="ml-3 text-gray-500 leading-none"
+            >Serves images via a fast image CDN</span
+          >
+        </div>
+      </li>
+      <li class="mb-5">
+        <div class="flex items-center">
+          <img src="images/blue.jpg" alt=" check mark" class="w-3" />
+          <span class="ml-3 text-gray-500 leading-none">Free of Charge!!!</span>
+        </div>
+      </li>
+    </ul>
+  </div>
 
-<div class="mt-16 px-8">
-  <img src="images/assets/yes.webp" alt="bg-image" />
+  <div class="p-8 md:w-1/2">
+    <h1 class="my-7 font-sans font-bold text-3xl" style="color: #1a202c">
+      Lighter Images means faster load times and improved website performance
+    </h1>
+    <p class="text-gray-500 leading-2.5 text-justify mb-8">
+      Images add up to 60% of the average web page's total load time. For that
+      reason, by taking care of something as simple as optimizing them, you can
+      get your site to load even twice as fast. PixelSqueeze does that for you,
+      on autopilot!
+    </p>
+  </div>
 </div>
-<div class="p-8">
+
+<div class="md:px-20 md:flex">
+  <div class="md:w-1/2">
+    <app-stories></app-stories>
+  </div>
+
+  <div class="mt-16 px-8 md:px-0 md:w-1/2">
+    <img src="images/assets/yes.webp" alt="bg-image" />
+  </div>
+</div>
+
+<div class="p-8 md:px-20 md:text-center">
   <h1 class="my-7 font-sans font-bold text-3xl" style="color: #1a202c">
     Any Enquiries... ?
   </h1>
   <div
-    style="background-color: #20c5f8"
-    class="p-4 my-7 flex justify-center rounded-lg"
+    class="p-4 my-7 flex justify-center rounded-lg bg-customBlue hover:bg-customBlue-hover md:w-2/5 cursor-pointer md:ml-auto md:mr-auto"
     (click)="sendEmail('prospaul999@gmail.com')"
   >
     <span style="color: #fcfeff" class="font-light tracking-wide"
