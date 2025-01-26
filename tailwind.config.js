@@ -2,7 +2,14 @@
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customBlue: {
+          DEFAULT: "#20C5F8",
+          hover: "#62dcfb",
+        },
+      },
+    },
   },
   plugins: [],
 };
