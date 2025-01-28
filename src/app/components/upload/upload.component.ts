@@ -20,7 +20,7 @@ export class UploadComponent implements OnInit {
   uploadedFileName: string | null = null;
   uploadedFile: File | null = null;
   readyToCompress = false;
-  isCompressing = false; // Track if the image is being compressed
+  isCompressing = false;
 
   constructor(private tinyPngService: TinyPngService) {}
 
@@ -40,16 +40,15 @@ export class UploadComponent implements OnInit {
 
   compressImage(): void {
     if (this.uploadedFile) {
-      this.isCompressing = true; // Show loading spinner
+      this.isCompressing = true;
       this.tinyPngService.compressImage(this.uploadedFile).subscribe({
         next: (response) => {
-          // Assuming the response contains the compressed image URL
           this.compressedImageUrl = response.output.url;
-          this.isCompressing = false; // Hide spinner when done
+          this.isCompressing = false;
         },
         error: (err) => {
           console.error('Failed to compress image:', err);
-          this.isCompressing = false; // Hide spinner
+          this.isCompressing = false;
           alert(
             'An error occurred while compressing the image. Please try again.'
           );
