@@ -8,6 +8,7 @@ module.exports = {
           DEFAULT: "#20C5F8",
           hover: "#62dcfb",
         },
+        footerText: "#bbbbbb",
       },
     },
   },
